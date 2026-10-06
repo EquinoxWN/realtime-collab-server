@@ -1,0 +1,26 @@
+{
+  "name": "realtime-collab-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Turns the editing engine into live multiplayer for thousands of users, with presence and version history.",
+  "type": "module",
+  "exports": "./dist/src/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test --test-timeout=60000 \"dist/test/*.test.js\"",
+    "load": "npm run build && node dist/src/load.js",
+    "start": "npm run build && node dist/src/main.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.1",
+    "@types/ws": "8.18.2",
+    "typescript": "7.0.2"
+  }
+}
