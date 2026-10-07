@@ -56,6 +56,12 @@ _Steps 1 and 2 are built and tested (M1); the rest is on the [roadmap](#roadmap)
 5. Updates append to a log and are compacted into snapshots, which also powers version history.
 6. Slow clients get backpressure instead of unbounded buffers, and reconnecting clients resync using state vectors.
 
+## Who it helps
+
+- **Who:** Developers adding live co-editing to an application.
+- **The problem:** Syncing edits over WebSockets also means handling authentication, forged edits, floods and oversized messages.
+- **How to use it:** Run the server and connect clients to authenticated rooms where CRDT updates are applied and broadcast, with those abuse limits enforced and tested.
+
 ## Tech stack
 
 | Area | In M1 | Planned |
